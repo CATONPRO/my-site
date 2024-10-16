@@ -33,3 +33,19 @@ body {
 {
     height: 32pt;
 }
+.button {
+    background-color: #252220; /* Заливка в обычном состоянии */
+    border: 3px solid #453b34; /* Край кнопки */
+    color: white; /* Цвет текста */
+    font-family: 'Montserrat', sans-serif; /* Шрифт */
+    font-size: 10pt; /* Размер текста */
+    padding: 8px; /* Отступ от текста до края */
+    border-radius: 15px; /* Закругление краев */
+    transition: all 0.3s ease; /* Плавная анимация */
+    position: relative; /* Для управления тенью */
+}
+.button:hover {
+    background-color: #453b34; /* Заливка при наведении */
+    transform: translateY(-3px); /* Приподнятие кнопки */
+    box-shadow: 0 3px 0 #453b34; /* Тень снизу */
+}
