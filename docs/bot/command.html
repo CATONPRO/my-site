@@ -84,10 +84,6 @@
             const userCooldown = Number(data.UserCooldown);
             const globalCooldown = Number(data.GlobalCooldown);
 
-            // Форматирование кулдаунов
-            const userCooldownDisplay = userCooldown < 60 ? `${userCooldown} секунд` : `${(userCooldown / 60).toFixed(2)} минут`;
-            const globalCooldownDisplay = globalCooldown < 60 ? `${globalCooldown} секунд(а/ы)` : `${(globalCooldown / 60).toFixed(2)} минут(а/ы)`;
-
             // Форматирование алиасов
             const aliases = data.aliases.map(alias => `#${alias}`).join(', ');
 
@@ -98,8 +94,8 @@
                 <p>Описание команды: ${data.Description}</p>
                 <p>Кулдаун команды для:</p>
                 <ul>
-                    <li>Пользователя: ${userCooldownDisplay}</li>
-                    <li>Глобальный: ${globalCooldownDisplay}</li>
+                    <li>Пользователя: ${userCooldown} секунд(а/ы)</li>
+                    <li>Глобальный: ${globalCooldown} секунд(а/ы)</li>
                 </ul>
                 <p>Алиасы команды: ${aliases}</p>
                 <p>Аргументы команды: ${data.ArgsRequired}</p>
