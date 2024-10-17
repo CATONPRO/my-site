@@ -84,7 +84,8 @@
             const userCooldown = Number(data.UserCooldown);
             const globalCooldown = Number(data.GlobalCooldown);
 
-            // Форматирование кулдаунов const userCooldownDisplay = userCooldown < 60 ? `${userCooldown} секунд` : `${(userCooldown / 60).toFixed(2)} минут`;
+            // Форматирование кулдаунов
+            const userCooldownDisplay = userCooldown < 60 ? `${userCooldown} секунд` : `${(userCooldown / 60).toFixed(2)} минут`;
             const globalCooldownDisplay = globalCooldown < 60 ? `${globalCooldown} секунд(а/ы)` : `${(globalCooldown / 60).toFixed(2)} минут(а/ы)`;
 
             // Форматирование алиасов
