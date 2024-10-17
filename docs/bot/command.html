@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>butterBror | Главная</title>
+    
+    <!-- Мета-теги для SEO -->
+    <meta name="description" content="Twitch бот с большим функционалом!">
+	<!-- Мета-теги для социальных сетей -->
+    <!-- Open Graph для Facebook -->
+    <meta property="og:title" content="butterBror">
+    <meta property="og:description" content="Twitch бот с большим функционалом!">
+    <meta property="og:image" content="../images/bot_logo.png">
+    <meta property="og:url" content="https://itzkitb.ru/bot">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="bot">
+    <meta name="twitter:title" content="butterBror | Главная">
+    <meta name="twitter:description" content="Twitch бот с большим функционалом!">
+    <meta name="twitter:image" content="../images/bot_logo.png">
+    
+    <!-- Фавикон -->
+    <link rel="icon" href="../images/bot_favicon.ico" type="image/x-icon">
+    <!-- Стили -->
+    <link rel="stylesheet" href="../styles.css">
+	<style>
+        .command-info {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="centerPlease">
+        <header class="center">
+            <div class="test">
+                <img src="https://cdn.7tv.app/emote/62cdae5a37406f38450c750a/2x.webp" alt="JABA" class="emote">
+                <img src="https://cdn.7tv.app/emote/6152bfcf43b2d9da0d32c9c7/2x.webp" alt="TeaTime" class="emote">
+            </div>
+        </header>
+
+        <main>
+            <p class="title">Сайт в разработке...</p>
+            <div id="commandInfo" class="command-info"></div>
+        </main>
+
+        <footer>
+            <p class="text">©2024 ItzKITb. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        async function fetchCommandInfo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const commandName = urlParams.get('name');
+
+            if (commandName) {
+                const response = await fetch(`commands/${commandName}.json`);
+                if (response.ok) {
+                    const commandData = await response.json();
+                    displayCommandInfo(commandData);
+                } else {
+                    document.getElementById('commandInfo').innerText = 'Команда не найдена.';
+                }
+            } else {
+                document.getElementById('commandInfo').innerText = 'Параметр команды не указан.';
+            }
+        }
+
+        function displayCommandInfo(data) {
+            const commandInfoDiv = document.getElementById('commandInfo');
+            const userCooldown = data.UserCooldown < 60 ? `${data.UserCooldown} секунд` : `${(data.UserCooldown / 60).toFixed(2)} минут`;
+            const globalCooldown = data.GlobalCooldown < 60 ? `${data.GlobalCooldown} секунд` : `${(data.GlobalCooldown / 60).toFixed(2)} минут`;
+            const aliases = data.aliases.map(alias => `#${alias}`).join(', ');
+
+            commandInfoDiv.innerHTML = `
+                <h2>Название команды: ${data.Name}</h2>
+                <p>Автор команды: <a href="${data.AuthorURL}" target="_blank">${data.Author}</a></p>
+                <img src="${data.AuthorImageURL}" alt="${data.Author}" class="author-image">
+                <p>Описание команды: ${data.Description}</p>
+                <p>Кулдаун команды для:</p>
+                <ul>
+                    <li>Пользователя: ${userCooldown}</li>
+                    <li>Глобальный: ${globalCooldown}</li>
+                </ul>
+                <p>Алиасы команды: ${aliases}</p>
+                <p>Аргументы команды: ${data.ArgsRequired}</p>
+                <p>Дата создания команды: ${new Date(data.CreationDate).toLocaleDateString('ru-RU')}</p>
+                <p>Команда только для:</p>
+                <ul>
+                    <li>Админов: ${data.ForAdmins ? 'Да' : 'Нет'}</li>
+                    <li>Создателей бота: ${data.ForBotCreator ? 'Да' : 'Нет'}</li>
+                    <li>Админов канала: ${data.ForChannelAdmins ? 'Да' : 'Нет'}</li>
+                </ul>
+            `;
+        }
+
+        // Вызов функции для получения информации о команде при загрузке страницы
+        fetchCommandInfo();
+    </script>
+</body>
+</html>
