@@ -79,8 +79,15 @@
 
         function displayCommandInfo(data) {
             const commandInfoDiv = document.getElementById('commandInfo');
-            const userCooldown = data.UserCooldown < 60 ? `${data.UserCooldown} секунд` : `${(data.UserCooldown / 60).toFixed(2)} минут`;
-            const globalCooldown = data.GlobalCooldown < 60 ? `${data.GlobalCooldown} секунд` : `${(data.GlobalCooldown / 60).toFixed(2)} минут`;
+
+            // Преобразование кулдаунов в числа
+            const userCooldown = Number(data.UserCooldown);
+            const globalCooldown = Number(data.GlobalCooldown);
+
+            // Форматирование кулдаунов const userCooldownDisplay = userCooldown < 60 ? `${userCooldown} секунд` : `${(userCooldown / 60).toFixed(2)} минут`;
+            const globalCooldownDisplay = globalCooldown < 60 ? `${globalCooldown} секунд(а/ы)` : `${(globalCooldown / 60).toFixed(2)} минут(а/ы)`;
+
+            // Форматирование алиасов
             const aliases = data.aliases.map(alias => `#${alias}`).join(', ');
 
             commandInfoDiv.innerHTML = `
@@ -90,8 +97,8 @@
                 <p>Описание команды: ${data.Description}</p>
                 <p>Кулдаун команды для:</p>
                 <ul>
-                    <li>Пользователя: ${userCooldown}</li>
-                    <li>Глобальный: ${globalCooldown}</li>
+                    <li>Пользователя: ${userCooldownDisplay}</li>
+                    <li>Глобальный: ${globalCooldownDisplay}</li>
                 </ul>
                 <p>Алиасы команды: ${aliases}</p>
                 <p>Аргументы команды: ${data.ArgsRequired}</p>
