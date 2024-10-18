@@ -71,11 +71,11 @@ body {
     border-radius: 50%;
 }
 A {
-    color: #ffa061AA; /* Цвет ссылок */
+    color: #ffa061AA;
 }
 A:visited {
-    color: #ffa061AA; /* Цвет посещенных ссылок */
+    color: #ffa061AA;
 }
 A:active {
-    color: #ffa061EE; /* Цвет активных ссылок */
+    color: #ffa061EE;
 }
