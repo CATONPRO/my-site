@@ -70,3 +70,12 @@ body {
     height: 25px;
     border-radius: 50%;
 }
+A {
+    color: #ffa061AA; /* Цвет ссылок */
+}
+A:visited {
+    color: #ffa061AA; /* Цвет посещенных ссылок */
+}
+A:active {
+    color: #ffa061EE; /* Цвет активных ссылок */
+}
