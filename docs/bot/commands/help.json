@@ -8,7 +8,7 @@
     "UserCooldown": 120,
     "GlobalCooldown": 10,
     "aliases": ["help", "info", "помощь", "hlp"],
-    "ArgsRequired": "(название команды)",
+    "ArgsRequired": "[Название команды]",
     "CreationDate": "2024-09-12T00:00:00",
     "ForAdmins": false,
     "ForBotCreator": false,
