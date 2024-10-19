@@ -26,29 +26,55 @@
 
     <!-- Стили -->
     <link rel="stylesheet" href="styles.css">
+	
+	<style>
+		body {
+			background: #252220;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+	</style>
 </head>
 <body>
-<div class="centerPlease">
-    <!-- Хедер сайта -->
-    <header>
-        <div class="center">
-            <img src="https://cdn.7tv.app/emote/62cdae5a37406f38450c750a/2x.webp" alt="JABA" class="emote">
-            <img src="https://cdn.7tv.app/emote/6152bfcf43b2d9da0d32c9c7/2x.webp" alt="TeaTime" class="emote">
-        </div>
-    </header>
-    
-    <!-- Основной контент -->
-    <main>
-        <h2 class="title">Такой страницы не существует!</h2>
+    <div id="backgroundText" class="background-text">
+        404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 
+    </div>
+	
+	<script>
+        const backgroundText = document.getElementById('backgroundText');
+
+        document.addEventListener('mousemove', (event) => {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Вычисляем смещение для текста
+            const offsetX = (mouseX / window.innerWidth) * 25 - 25; // Измените 50 и 25 для настройки движения
+            const offsetY = (mouseY / window.innerHeight) * 25 - 25; // Измените 50 и 25 для настройки движения
+
+            // Применяем трансформацию
+            backgroundText.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        });
+		setInterval(() => {
+            if (window.scrollY !== 0) {
+                window.scrollTo(0, 0);
+            }
+        }, 20);
+    </script>
+	
+    <div id="info" class="centerPlease, blurObject">
+        <p class="title">Страница не найдена</p>
+        <p class="text">Извините, но запрашиваемая страница не существует.</p>
         <div class="center">
             <button onclick="document.location='/'" class="button">На главную</button>
         </div>
-    </main>
-    
-    <!-- Футер сайта -->
-    <footer>
-        <p class="text">&copy;2024 ItzKITb. Все права защищены.</p>
-    </footer>
-</div>
+		<footer>
+			<p class="text">&copy;2024 ItzKITb. Все права защищены.</p>
+		</footer>
+    </div>
 </body>
 </html>
