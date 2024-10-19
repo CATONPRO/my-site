@@ -27,40 +27,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="backgroundText" class="background-text">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-        <img src="/images/JABA/1x.webp" alt="JABA">
-        <img src="/images/TeaTime/1x.webp" alt="TeaTime">
-    </div>
     <div class="centerPlease">
         <!-- Хедер сайта -->
         <header class="center">
@@ -75,27 +41,6 @@
             <p class="title">Сайт в разработке...</p>
         </main>
         
-        <script>
-            const backgroundText = document.getElementById('backgroundText');
-    
-            document.addEventListener('mousemove', (event) => {
-                const mouseX = event.clientX;
-                const mouseY = event.clientY;
-    
-                // Вычисляем смещение для текста
-                const offsetX = (mouseX / window.innerWidth) * 25 - 25; // Измените 50 и 25 для настройки движения
-                const offsetY = (mouseY / window.innerHeight) * 25 - 25; // Измените 50 и 25 для настройки движения
-    
-                // Применяем трансформацию
-                backgroundText.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-            });
-            setInterval(() => {
-                if (window.scrollY !== 0) {
-                    window.scrollTo(0, 0);
-                }
-            }, 20);
-        </script>
-
         <!-- Футер сайта -->
         <footer>
             <p class="text">©2024 ItzKITb. Все права защищены.</p>
