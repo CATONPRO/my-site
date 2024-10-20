@@ -27,6 +27,21 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+	<!-- Хедер сайта -->
+    <header class="header">
+        <div class="header-logo">
+			<div style="padding-left: 15px;">
+				<a href="/" target="_blank" class="header-logo-text" style="text-decoration: none;">ItzKITЬ</a>
+			</div>
+        </div>
+		<div class="header-menu">
+			<button onclick="document.location='/'" class="button">Проекты</button>
+			<button onclick="document.location='/'" class="button">Обо мне</button>
+			<button onclick="document.location='/'" class="button">Правила</button>
+			<button onclick="document.location='/'" class="button">Бот</button>
+		</div>
+    </header>
+	
     <div class="centerPlease">
         <header class="center">
             <div class="test">
@@ -36,15 +51,16 @@
         </header>
 
         <main>
-            <p class="title">Сайт в разработке...</p>
             <div id="commandInfo" class="command-info"></div>
         </main>
-
-        <footer>
-            <p class="text">©2024 ItzKITb. Все права защищены.</p>
-        </footer>
     </div>
-
+	
+	<footer>
+		<div class="center" style="margin-top: calc(100vh - 45px);">
+			<p class="text">©2024 ItzKITb. Все права защищены.</p>
+		</div>
+	</footer>
+	
     <script>
         async function fetchCommandInfo() {
             const urlParams = new URLSearchParams(window.location.search);

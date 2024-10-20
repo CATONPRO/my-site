@@ -29,7 +29,7 @@
 	
 	<style>
 		body {
-			background: #252220;
+			background: #070706;
             margin: 0;
             height: 100vh;
             display: flex;
@@ -44,6 +44,21 @@
     <div id="backgroundText" class="background-text">
         404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 404 
     </div>
+	
+	<!-- Хедер сайта -->
+    <header class="header">
+        <div class="header-logo">
+			<div style="padding-left: 15px;">
+				<a href="/" target="_blank" class="header-logo-text" style="text-decoration: none;">ItzKITЬ</a>
+			</div>
+        </div>
+		<div class="header-menu">
+			<button onclick="document.location='/'" class="button">Проекты</button>
+			<button onclick="document.location='/'" class="button">Обо мне</button>
+			<button onclick="document.location='/'" class="button">Правила</button>
+			<button onclick="document.location='/'" class="button">Бот</button>
+		</div>
+    </header>
 	
 	<script>
         const backgroundText = document.getElementById('backgroundText');
@@ -66,15 +81,23 @@
         }, 20);
     </script>
 	
-    <div id="info" class="blurObject" style="text-align: center;">
-        <p class="title">Страница не найдена</p>
-        <p class="text">Извините, но запрашиваемая страница не существует.</p>
-        <div class="center">
-            <button onclick="document.location='/'" class="button">На главную</button>
-        </div>
-		<footer>
-			<p class="text">&copy;2024 ItzKITb. Все права защищены.</p>
-		</footer>
-    </div>
+	<div class="centerPlease">
+		<main>
+			<!-- Основной контент -->
+			<div id="info" class="blurObject" style="text-align: center;">
+				<p class="title">Страница не найдена</p>
+				<p class="text">Извините, но запрашиваемая страница не существует.</p>
+				<div class="center">
+					<button onclick="document.location='/'" class="button">На главную</button>
+				</div>
+			</div>
+		</main>
+	</div>
+	
+	<footer>
+		<div class="center" style="margin-top: calc(100vh - 45px);">
+			<p class="text">©2024 ItzKITb. Все права защищены.</p>
+		</div>
+	</footer>
 </body>
 </html>
